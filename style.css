@@ -1,0 +1,169 @@
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background-color: #f7f9fc;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+/* Header & Cart Icon */
+header {
+  position: absolute;
+  top: 40px;
+  right: 60px;
+  z-index: 100;
+}
+
+.cart-icon-container {
+  position: relative;
+  background: #ffffff;
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.cart-icon-container:active {
+  transform: scale(0.95);
+}
+
+.cart-icon-container i {
+  font-size: 24px;
+  color: #e63946; /* আপনার ইমেজের মতো লালচে ভাইব */
+}
+
+.cart-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #e63946;
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ffffff;
+}
+
+/* Product Card */
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.product-card {
+  background: #ffffff;
+  width: 380px;
+  padding: 30px;
+  border-radius: 28px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.04);
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.image-container {
+  background: #fdfdfd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px 0;
+}
+
+.image-container img {
+  height: 220px;
+  object-fit: contain;
+  /* সফট শ্যাডো ক্যানের নিচে */
+  filter: drop-shadow(0 15px 12px rgba(0, 0, 0, 0.15)); 
+}
+
+/* Typography & Text Details */
+.product-title {
+  font-size: 24px;
+  font-weight: 800;
+  color: #1a1e29;
+  margin-bottom: 8px;
+}
+
+.product-desc {
+  font-size: 13px;
+  color: #7d8592;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* Footer Section Inside Card */
+.product-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.add-to-cart-btn {
+  background-color: #1d2436;
+  color: #ffffff;
+  border: none;
+  padding: 14px 24px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 6px 20px rgba(29, 36, 54, 0.2);
+  transition: background-color 0.2s, transform 0.1s;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #2b344d;
+}
+
+.add-to-cart-btn:active {
+  transform: scale(0.97);
+}
+
+.product-price {
+  font-size: 20px;
+  font-weight: 800;
+  color: #1a1e29;
+}
+
+/* Flying Clone Custom Animation Class */
+.flying-img {
+  position: absolute;
+  z-index: 9999;
+  pointer-events: none;
+  object-fit: contain;
+  /* Parabolic/Curve ট্র্যাকিং এর জন্য cubic-bezier */
+  transition: all 0.8s cubic-bezier(0.42, 0, 0.58, 1);
+}
+
+/* Cart Icon Bumping Effect */
+.bump {
+  animation: bumpAnim 0.3s ease-in-out;
+}
+
+@keyframes bumpAnim {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
